@@ -22,7 +22,7 @@ $(function(){
 		}).end()
 		.find('.box')
 		.each(function(){
-			if(Math.random()>0.8){
+			if(Math.random()>0.9){
 				$(this).data('islei',true)
 			}
 		})
@@ -34,7 +34,9 @@ $(function(){
 		})*/
 		.click(function(){
 			if($(this).data('islei')){
-				$('.lei').css('display','block')
+				$('.lei').css('display','block').end().find('.again').click(function(){
+					window.location.reload();
+				})
 				$('.scan .box').removeClass().addClass('box').addClass(function(i){
 					if($('.scan .box').eq(i).data('islei')){
 						return 'red'
